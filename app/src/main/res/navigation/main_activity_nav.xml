@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/filmAnasayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.berin.recyclerviewkullanimi.AnaSayfaFragment"
+        android:label="AnaSayfaFragment"
+        tools:layout="@layout/fragment_ana_sayfa">
+        <action
+            android:id="@+id/detayaGecis"
+            app:destination="@id/detaySayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaySayfaFragment"
+        android:name="com.berin.recyclerviewkullanimi.DetaySayfaFragment"
+        android:label="DetaySayfaFragment"
+        tools:layout="@layout/fragment_detay_sayfa">
+        <argument
+            android:name="nesne"
+            app:argType="com.berin.recyclerviewkullanimi.Kisiler" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmAnasayfaFragment"
+        android:name="com.berin.recyclerviewkullanimi.FilmAnasayfaFragment"
+        android:label="FilmAnasayfaFragment"
+        tools:layout="@layout/fragment_film_anasayfa">
+        <action
+            android:id="@+id/filmDetayGecis"
+            app:destination="@id/filmDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmDetayFragment"
+        android:name="com.berin.recyclerviewkullanimi.FilmDetayFragment"
+        android:label="FilmDetayFragment"
+        tools:layout="@layout/fragment_film_detay">
+        <argument
+            android:name="filmNesne"
+            app:argType="com.berin.recyclerviewkullanimi.Filmler" />
+    </fragment>
+</navigation>
